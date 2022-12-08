@@ -99,11 +99,13 @@ export function LoginView() {
           )}
         />
 
-        {loading ? (
-          <h1 className="font-bold text-md text-cyan-600">Chupetovisk</h1>
-        ) : (
-          <Button>Login</Button>
-        )}
+        <div className="flex justify-end">
+          {loading ? (
+            <h1 className="font-bold text-md text-cyan-600">Chupetovisk</h1>
+          ) : (
+            <Button>Login</Button>
+          )}
+        </div>
       </form>
     </div>
   );
