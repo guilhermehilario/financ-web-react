@@ -7,7 +7,7 @@ import {
 } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 
-import { Title, Span, TextInput, Button } from "../../components";
+import { Title, Span, TextInput, Button, Error } from "../../components";
 import { Envelope, Fingerprint, Keyhole } from "phosphor-react";
 
 // Extrarir
@@ -53,11 +53,7 @@ export function LoginView() {
       <Title>Dashboard Base</Title>
       <Span>by Isnewart</Span>
 
-      {error && (
-        <h3 className="text-md text-cyan-400">
-          Algo de errado não está certo!!!
-        </h3>
-      )}
+      {error && <Error message="Algo de errado não está certo!!!" />}
       <form onSubmit={handleSubmit(handleLogin)}>
         <Controller
           name="email"
@@ -74,7 +70,9 @@ export function LoginView() {
                   type="email"
                 />
               </TextInput.Root>
-              {errors.email?.message && <Span>{errors.email?.message}</Span>}
+              {errors.email?.message && (
+                <Error message={errors.email?.message} />
+              )}
             </>
           )}
         />
@@ -95,7 +93,7 @@ export function LoginView() {
                 />
               </TextInput.Root>
               {errors.password?.message && (
-                <Span>{errors.password?.message}</Span>
+                <Error message={errors.password?.message} />
               )}
             </>
           )}
