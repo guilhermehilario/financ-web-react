@@ -21,5 +21,7 @@ module.exports = {
     'import/no-unresolved': 'off',
     'import/extensions': ['error', { extensions: '.tsx' }],
     'react/jsx-filename-extension': ['error', { extensions: ['.ts', '.tsx'] }],
+    'import/no-extraneous-dependencies': 'off',
+    '@typescript-eslint/no-var-requires': 'off',
   },
 };
