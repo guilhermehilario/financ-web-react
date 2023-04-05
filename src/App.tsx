@@ -1,6 +1,6 @@
 import "./styles/global.css";
 
-import { Login } from "./screens";
+import { Login, ListUsers } from "./screens";
 
 export function App() {
   return <Login />;
